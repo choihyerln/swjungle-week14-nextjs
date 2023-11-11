@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <h2>Welcome</h2>
       Hello, Nextjs !
-      <br />
+      <br /><br />
       <img src="/울면한대.jpg" width={240}></img>
     </>
   )

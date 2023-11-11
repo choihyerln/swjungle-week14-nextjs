@@ -1,8 +1,12 @@
-export default function Read(props) {
+export default async function Read(props) {
+    // id 값을 url에 반영해서 데이터를 가져옴
+    const resp = await fetch(`http://localhost:8000/topics/${props.params.id}`, {cache: 'no-store'});
+    const topic = await resp.json();
+
     return (
         <>
-            <h2>Read</h2>
-            parameters: {props.params.id}
+            <h2>{topic.title}</h2>
+            {topic.body}
         </>
     )
 }
