@@ -16,7 +16,7 @@ export default function Create() {
                 body: JSON.stringify({title, body})
             }
             // 서버로 전송해서 데이터 추가해야함
-            fetch(`http://localhost:8000/topics`, options)
+            fetch(process.env.NEXT_PUBLIC_API_URL+`topics`, options)
                 .then(resp => resp.json())
                 .then(result => {
                     console.log(result);

@@ -9,8 +9,9 @@ export default function Update() {
     const router = useRouter();
     const params = useParams(); // 아이디 가져오기 위해 params 가져옴
     // read는 server component이므로 그대로 가져올 수 없음
+    // client component (비동기적 코드)
     useEffect(() => {
-        fetch(`http://localhost:8000/topics/${params.id}`)
+        fetch(process.env.NEXT_PUBLIC_API_URL+`topics/${params.id}`)
             .then(resp => resp.json())
             .then(result => {
                 console.log(result);
