@@ -13,10 +13,10 @@ export default function Create() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({title, body})
+                body: JSON.stringify({ title, body })
             }
             // 서버로 전송해서 데이터 추가해야함
-            fetch(process.env.NEXT_PUBLIC_API_URL+`topics`, options)
+            fetch(process.env.NEXT_PUBLIC_API_URL + `topics`, options)
                 .then(resp => resp.json())
                 .then(result => {
                     console.log(result);

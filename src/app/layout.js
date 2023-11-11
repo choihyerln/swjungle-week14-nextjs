@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   // const resp = await fetch('http://localhost:8000/topics', { next: { revalidate: 0 } }); // 숫자 동안만 캐시 유지, 숫자(초)가 지나면 그 캐시는 다시 만들어진다.
-  const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+'topics', { cache: 'no-store' });       // 캐시 정책을 저장하지 않는다.
+  const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + 'topics', { cache: 'no-store' });       // 캐시 정책을 저장하지 않는다.
   const topics = await resp.json();
 
   return (
